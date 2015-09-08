@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../favicon.ico">
+    <title>IPM Hackers| Verizon</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles/vzbootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../scripts/html5shiv.min.js"></script>
+      <script src="../scripts/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!--Global Navigation-->
+    <header class="vz-global-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container whitepage">
+      <!-- Primary Navigation section -->
+      <div id="primary-nav">
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <div class="page-header hidden-xs">
+              <h1>VZ Bootstrap Typeahead</h1>
+              <ol class="breadcrumb hidden-xs">
+                <li><a href="#">Home</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Content Section -->
+      <h2 class="text-brand-red">Typeahead</h2>
+      <div class="row">
+        <div class="col-md-12">
+
+          
+          <div id="name-suggest">
+            <input class="typeahead" type="text" placeholder="States of USA">
+          </div>
+
+
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+    <!-- Global Footer -->
+    <footer class="container disclaimer padding-left-right-zero">
+        <div class="row">
+            <div class="col-md-8 col-xs-8">
+                <p>Proprietary and Confidential. Not for disclosure outside of Verizon.</p>
+            </div>
+            <div class="col-md-4 col-xs-4">
+                <p class="pull-right pull-mobile-none">Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="../scripts/jquery.min.js"></script>
+  <script src="../scripts/bootstrap.min.js"></script>
+  <script src="../scripts/vzbootstrap.min.js"></script>
+
+
+  <!-- jQuery Typeahead initialization -->
+  <script>
+    var substringMatcher = function(strs) {
+      return function findMatches(q, cb) {
+        var matches, substringRegex;
+     
+        // an array that will be populated with substring matches
+        matches = [];
+     
+        // regex used to determine if a string contains the substring `q`
+        substrRegex = new RegExp(q, 'i');
+     
+        // iterate through the pool of strings and for any string that
+        // contains the substring `q`, add it to the `matches` array
+        $.each(strs, function(i, str) {
+          if (substrRegex.test(str)) {
+            matches.push(str);
+          }
+        });
+     
+        cb(matches);
+      };
+    };
+     
+    var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+      'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+      'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+      'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+      'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+      'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+      'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+      'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+      'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+    ];
+     
+    $('#name-suggest .typeahead').typeahead({
+      hint: true,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: 'states',
+      source: substringMatcher(states)
+    });
+
+  </script>
+
+  </body>
+</html>

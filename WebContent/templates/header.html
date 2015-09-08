@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../favicon.ico">
+    <title>IPM Hackers| Verizon</title>
+    <!-- Bootstrap core CSS -->
+	  <link href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles/vzbootstrap.min.css" rel="stylesheet">
+    <link href="../vz-components/vz-global-header/vz-global-header.min.css" rel="stylesheet">
+    <link href="../vz-components/vz-search/vz-search.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../scripts/html5shiv.min.js"></script>
+      <script src="../scripts/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!--Global Navigation-->
+    <header class="vz-global-header">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <!-- mega menu starts -->
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <button type="button" class="search-toggle glyphicon glyphicon-search"></button>
+                <a class="navbar-brand" href="#"><span></span></a>
+            </div>
+          
+          <!-- mega menu ends --> 
+
+            <!-- search form starts -->
+            <div id="vz-search-form" class="navbar-collapse collapse">
+              <div class="search_inner">
+                <div class="form-item mobile">
+                  <div class="inputDropdown">
+                    <label class="sr-only" for="select-dropdown" tabindex="3">Dropdown</label>
+                    <input type="text" id="select-dropdown" value="About You" class="inputSmall" readonly tabindex="4" />
+                    <a href="javascript:;" class="searchArrow" tabindex="4"><span>&nbsp;</span></a> </div>
+                </div>
+                <!-- search options starts -->
+                <div class="search_options">
+                  <div role="application" class="form-item selectDropdown">
+                    <div class="form-item">
+                      <div id ="edit-search-content"  class="form-text selectDropdownInner"> 
+                        <!-- search results starts -->
+                        <div class="searchOverlayTop" id="searchOverlayTop1">
+                          <div class="intro-text"> <strong>Clear your search to start over</strong> </div>
+                          <!-- search results for people starts -->
+                          <div class="results"> <span class="open" type="Search">People</span>
+                            <div class="people">
+                              <div class="r">
+                                <div> <img src="" />
+                                  <h4>User <strong>name</strong></h4>
+                                </div>
+                                <div class="title-location title-job">tech mgr-system dev</div>
+                                <div class="title-location title-lob">wireline enterprise solutions</div>
+                                <div class="title-location title-phone"><a class="phone-url" >999-999-9999</a></div>
+                                <div class="title-location title-email"><a href="mailto:username@email.com">username@email.com</a></div>
+                              </div>
+                              <div class="r">
+                                <div> <img src="" />
+                                  <h4>User <strong>name</strong></h4>
+                                </div>
+                                <div class="title-location title-job">tech mgr-system dev</div>
+                                <div class="title-location title-lob">wireline enterprise solutions</div>
+                                <div class="title-location title-phone"><a class="phone-url" >999-999-9999</a></div>
+                                <div class="title-location title-email"><a href="mailto:username@email.com">username@email.com</a></div>
+                              </div>
+                              <div class="r">
+                                <div> <img src="" />
+                                  <h4>User <strong>name</strong></h4>
+                                </div>
+                                <div class="title-location title-job">tech mgr-system dev</div>
+                                <div class="title-location title-lob">wireline enterprise solutions</div>
+                                <div class="title-location title-phone"><a class="phone-url" >999-999-9999</a></div>
+                                <div class="title-location title-email"><a href="mailto:username@email.com">username@email.com</a></div>
+                              </div>
+                              <div class="r">
+                                <div> <img src="" />
+                                  <h4>User <strong>name</strong></h4>
+                                </div>
+                                <div class="title-location title-job">tech mgr-system dev</div>
+                                <div class="title-location title-lob">wireline enterprise solutions</div>
+                                <div class="title-location title-phone"><a class="phone-url" >999-999-9999</a></div>
+                                <div class="title-location title-email"><a href="mailto:username@email.com">username@email.com</a></div>
+                              </div>
+                            </div>
+                            <div class="view-all"><a href="javascript:;">See All People Results ></a></div>
+                          </div> <!-- search results for people ends --> 
+                        </div> <!-- search results ends -->
+                        <label class="sr-only" for="search_content">Search Conetent</label>
+                        <input type="text" class="formInput" onfocus="if(this.value == 'Search') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search'; }" value="Search" name="search_content" id="search_content" tabindex="4">
+                      </div>
+                      <!-- search select drop down starts -->
+                      <div id="search_dropdown" style="display: none;" >
+                        <ul>
+                          <li><a href="javascript:;" tabindex="7">All</a></li>
+                          <li><a href="javascript:;" tabindex="5">About You</a></li>
+                          <li><a href="javascript:;" tabindex="6">VZWeb</a></li>
+                          <li id="list_people"><a href="javascript:;" tabindex="8">People</a></li>
+                        </ul>
+                      </div>
+                      <!-- search select drop down ends --> 
+                    </div>
+                    <a id="hrefHeaderSearch" title="Search"  href="javascript:;" class="form-submit"></a> </div>
+                </div> <!-- search options ends --> 
+                <!-- first name and last name search starts -->
+                <form id="edirectoryform" method="post" class="edirectoryform">
+                  <div class="search_options">
+                    <div class="form-item">
+                      <div id="edit-search-people-lastname" class="form-text formObj">
+                        <label class="sr-only" for="edit-search-people-lastname-text">Search Last Name</label>
+                        <input type="text" onfocus="if(this.value == 'Last Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Last Name'; }" value="Last Name" name="search_people_lastname" id="edit-search-people-lastname-text" class="formInput" tabindex="5">
+                      </div>
+                    </div>
+                    <span class="input-separator"></span>
+                    <div class="form-item">
+                      <div id="edit-search-people-firstname" class="form-text formObj">
+                        <label class="sr-only" for="edit-search-people-firstname-text">Search First Name</label>
+                        <input type="text" onfocus="if(this.value == 'First Name') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'First Name'; }" value="First Name" name="search_people_firstname" id="edit-search-people-firstname-text" class="formInput" tabindex="6">
+                      </div>
+                    </div>
+                    <input type="button" title="Search eDirectory" id="edit-submit" name="op" value="" class="form-submit" tabindex="7">
+                  </div> <!-- advanced search starts -->
+                  <div class="org_chart"><a tabindex="8" href="javascript:;" class="adv-search-link plus_icon" title="Advanced edirectory Search"><span>Advanced Search</span></a></div>
+                  <!-- advanced search ends -->
+                </form> <!-- first name and last name search ends --> 
+              </div>
+            </div> <!-- search form ends --> 
+
+            <div class="navbar-collapse collapse" id="navmenu"></div>
+            <!-- /.container-fluid -->
+          </div>
+        </nav>
+    </header>
+
+    <div class="container whitepage">
+
+      <!-- Primary Navigation section -->
+      <div id="primary-nav">
+        <div class="row">
+          <div class="col-sm-6 col-xs-2">
+            <div class="page-header hidden-xs">
+              <h1>VZ Bootstrap Header</h1>
+              <ol class="breadcrumb hidden-xs">
+                <li><a href="#">Home</a></li>
+                <li class="active">Header Menu &amp; Search</li>
+              </ol>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Global Content Section -->
+      <div class="row">
+        <div class="col-md-12">
+            &nbsp; 
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+    <!-- Global Footer -->
+    <footer class="container disclaimer padding-left-right-zero">
+        <div class="row">
+            <div class="col-md-8 col-xs-8">
+                <p>Proprietary and Confidential. Not for disclosure outside of Verizon.</p>
+            </div>
+            <div class="col-md-4 col-xs-4">
+                <p class="pull-right pull-mobile-none">Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+	<script src="../scripts/jquery.min.js"></script>
+	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/vzbootstrap.min.js"></script>
+  <script src="../vz-components/vz-global-header/vz-global-header.min.js"></script>
+  <script src="../vz-components/vz-search/vz-search.min.js"></script>
+  </body>
+</html>

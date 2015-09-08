@@ -1,0 +1,50 @@
+
+<%@page import="java.util.Date"%>
+<%@ page import="forum.*"%>
+<%@ page import="forum.Filter"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.io.*"%>
+
+<%
+	DBConnectie db = new DBConnectie(Variable.getDb(), Variable.getDbLogin(), Variable.getDbPassword());
+	try {
+
+		session = request.getSession(true);
+		String sessionUsername = (String) session.getAttribute("username");
+		String sessionType = (String) session.getAttribute("type");
+
+		String forum_id = request.getParameter("forum_id");
+		String start = request.getParameter("start");
+		String reqThread_id = request.getParameter("thread_id");
+		String reqReply_id = request.getParameter("reply_id");
+		String message = request.getParameter("message");
+		message = Filter.filterAll(message);
+
+		int changeDifference = (((100 * message.length())
+				/ Utilities.getMessageLength(forum_id, reqThread_id, reqReply_id)));
+
+		java.util.Date date_time = new java.util.Date();
+
+		message += "<!-- begin --!><BR><BR><I>Edited by " + sessionUsername + " - " + date_time + " ("
+				+ changeDifference + "%)</I><!-- end --!>";
+
+		db.connect();
+
+		if (sessionType.equals("Admin")) {
+			db.query("UPDATE forum_message " + "SET message =\"" + message + "\"" + "WHERE forum_id=\""
+					+ forum_id + "\" AND thread_id =\"" + reqThread_id + "\" AND reply_id=\"" + reqReply_id
+					+ "\"");
+		} else {
+			db.query("UPDATE forum_message " + "SET message =\"" + message + "\"" + "WHERE forum_id=\""
+					+ forum_id + "\" AND thread_id =\"" + reqThread_id + "\" AND reply_id=\"" + reqReply_id
+					+ "\" AND user=\"" + sessionUsername + "\"");
+		}
+
+		response.sendRedirect("../index.jsp?page=message&forum_id=" + forum_id + "&thread_id=" + reqThread_id
+				+ "&start=" + start);
+
+		db.close();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+%>
