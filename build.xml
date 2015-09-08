@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Vz Tech Connect" basedir="VzTechConnect" default="main">
+<project name="Vz Tech Connect" basedir="hbl" default="main">
 	<path id="master-classpath">
 		<fileset dir="WebContent/WEB-INF/lib">
 			<include name="*.jar" />
