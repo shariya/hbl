@@ -7,6 +7,7 @@
 		<pathelement path="WebContent/WEB-INF/classes" />
 	</path>
 
+	
 	<target name="clean">
 		<delete dir="WebContent/WEB-INF/classes">
 		</delete>
