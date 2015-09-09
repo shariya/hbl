@@ -5,6 +5,10 @@
 <%@ page import="java.sql.ResultSet"%>
 <%@ page import="java.io.*"%>
 
+
+
+
+
 <%
 	try {
 		DBConnectie db = new DBConnectie(Variable.getDb(), Variable.getDbLogin(), Variable.getDbPassword());
