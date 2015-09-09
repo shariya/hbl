@@ -19,6 +19,10 @@
 			title = Filter.filterAll(title);
 		}
 
+	//Test commit	
+		
+		
+		
 		String forum_info = request.getParameter("forum_info");
 		forum_info = Filter.filterAll(forum_info);
 
